@@ -1,0 +1,24 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<h3>Mouse Positions xxx</h3>
+<canvas id="myCanvas" ></canvas>
+     <img src="static/images/{{file_name}}" id="image" hidden/>
+     <form action="/process" method="post" enctype = "multipart/form-data">
+         <input type="text" value = "" id="input_list_x" hidden name="input_list_x" >
+         <input type="text" value = "" id="input_list_y" hidden name="input_list_y">
+         <input type="text" value = "{{file_name}}" id="image_name" hidden name="image_name">
+                 <input type="submit" value="Submit" >
+
+     </form>
+
+</body>
+    <script src="{{ url_for('static',filename='script.js') }}">
+        console.log({{file_name}})
+    </script>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='style.css') }}">
+
+</html>

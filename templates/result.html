@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head>
+<body>
+<p>    if processed status is False it means processor is not done yet, check again couple of minutes lates
+</p>
+<table>
+  <tr>
+    <th>file_name</th>
+    <th>processed_status</th>
+    <th>open_link</th>
+  </tr>
+     {% for each,value in data.items() %}
+  <tr>
+
+    <td><a href="/static/images/{{value[0]}}">{{value[0]}}</a></td>
+    <td>{{value[1]}}</td>
+      {% if value[1] %}
+    <td><a href="/static/images/{{value[2]}}">open Image</a></td>
+      {% else %}
+          <td>no image</td>
+
+    {% endif %}
+  </tr>
+        {% endfor %}
+
+</table>
+</body>
+</html>
